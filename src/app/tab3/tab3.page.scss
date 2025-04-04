@@ -1,0 +1,62 @@
+.info {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+
+}
+
+.grid-container {
+  padding: 15px;
+}
+
+.custom-row {
+  justify-content: center;
+}
+
+.episode-col {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Estilo mejorado para cada tarjeta */
+app-card {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para la información dentro de la tarjeta */
+app-card h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+app-card p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #444;
+}
+
+/* Botón de información */
+.info-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.info-button ion-button {
+  background-color: #007aff;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 10px;
+}

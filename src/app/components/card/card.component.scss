@@ -1,0 +1,69 @@
+/* 🔹 Estilizar la imagen dentro de la tarjeta */
+ion-card img {
+    width: 100%; /* Ocupar todo el ancho */
+    height: 220px; /* Aumenta un poco la altura */
+    object-fit: cover; /* Evita que la imagen se deforme */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: block;
+  }
+  
+  /* 🔹 Estilos generales de la tarjeta */
+  ion-card {
+    max-width: 320px; 
+    margin: auto;
+    border-radius: 12px; /* Bordes más redondeados */
+    overflow: hidden; /* Evita que los bordes redondeados se corten */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Sombra más sutil */
+    background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Efecto de profundidad */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer; /* Indica que es clickeable */
+  }
+  
+  /* 🔹 Efecto hover para resaltar la tarjeta */
+  ion-card:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.25); /* Mayor profundidad */
+  }
+  
+  /* 🔹 Estilo del contenido dentro de la tarjeta */
+  ion-card-content {
+    padding: 15px;
+    text-align: center; /* Centrar el contenido */
+  }
+  
+  /* 🔹 Mejorar la visualización del título */
+  ion-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  /* 🔹 Mejorar la visualización del subtítulo */
+  ion-card-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  /* 🔹 Mejorar el texto de la descripción */
+  ion-card p {
+    font-size: 14px;
+    color: #444;
+  }
+  
+  ion-button {
+    --border-radius: 8px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .boton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
