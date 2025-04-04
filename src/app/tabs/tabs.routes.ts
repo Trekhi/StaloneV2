@@ -22,6 +22,11 @@ export const routes: Routes = [
           import('../tab3/tab3.page').then((m) => m.Tab3Page),
       },
       {
+        path: 'tab4',
+        loadComponent: () =>
+        import('../components/code-qr/code-qr.component').then((m) => m.CodeQrComponent),
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full',
