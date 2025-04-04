@@ -1,0 +1,61 @@
+ion-toolbar {
+    padding-top: env(safe-area-inset-top, 16px); /* Espacio seguro arriba */
+    --border-width: 0 !important;
+    --ion-border-color: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    background: white; /* Opcional para evitar transparencias */
+}
+  
+ion-button {
+    --color: black;
+    --border-radius: 8px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/*Personalización*/
+
+ion-button:hover {
+    color: orange;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.btn-support{
+    border: 2px solid orange;
+    border-radius: 20px;
+
+}
+
+.btn-support:hover{
+    color: rgb(255, 255, 255);
+    transform: scale(1.05);
+    background: orange;
+    transition: all 0.3s ease;
+}
+
+.hero-section {
+    display: flex;
+    background: orange;
+    justify-content: center;
+    align-items: center; /* Centrar horizontalmente */
+    height: 200px; /* Opcional: hace que ocupe toda la pantalla */
+}
+
+.hero-section h1 {
+    font-weight: bold;
+    font-size: 5rem; /* Tamaño grande para escritorio */
+    text-align: center;
+    margin: 0;
+    word-wrap: break-word; /* Evita que el texto se desborde */
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem; /* Reduce el tamaño en móviles */
+    }
+}
+

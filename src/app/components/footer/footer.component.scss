@@ -1,0 +1,53 @@
+ion-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  ion-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Ya no forzamos altura fija */
+    padding: 10px 0;
+    background: transparent;
+  }
+  
+  ion-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Espacio entre botones */
+    width: 100%;
+  }
+  
+  ion-button {
+    --color: black;
+    --border-radius: 8px;
+    font-weight: bold;
+    padding: 8px 12px;
+    min-width: 100px;
+    text-align: center;
+  }
+  
+  ion-button:hover {
+    color: orange;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+  }
+  
+  /* Opcional: Ajuste en pantallas pequeñas */
+  @media (max-width: 768px) {
+    ion-buttons {
+      gap: 10px;
+    }
+  
+    ion-button {
+      min-width: 80px;
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+  }
+  

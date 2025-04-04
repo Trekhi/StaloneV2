@@ -1,0 +1,17 @@
+<swiper-container 
+  [spaceBetween]="10" 
+  [navigation]="true" 
+  [breakpoints]="breakpoints">
+
+  <ng-container *ngIf="personajes?.length">
+    <swiper-slide *ngFor="let personaje of personajes">
+      <ion-card>
+        <img [src]="personaje.image" [alt]="personaje.name">
+        <ion-card-header>
+          <ion-card-title>{{ personaje.name }}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </swiper-slide>
+  </ng-container>
+
+</swiper-container>

@@ -1,17 +1,24 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <app-header></app-header>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+  <ion-content class="ion-padding">
+    <div class="hero-section">
+      <h1>The Rick and Morty API</h1>
+    </div>
+    <div class="info">
+      <h1>Characters</h1>
+    </div>
+    <app-swiper-slides [personajes]="personajes"></app-swiper-slides>
+    
+  </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <app-footer></app-footer>
+  </ion-toolbar>
+</ion-footer>

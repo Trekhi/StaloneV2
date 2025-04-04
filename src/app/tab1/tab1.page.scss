@@ -1,0 +1,38 @@
+ion-content {
+    --background: rgb(255, 255, 255);
+    color: black;
+}
+
+.info{
+    color: black;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    
+}
+
+//Rick and morty api
+.hero-section {
+    display: flex;
+    color: black;
+    background: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center; /* Centrar horizontalmente */
+    height: 200px; /* Opcional: hace que ocupe toda la pantalla */
+}
+
+.hero-section h1 {
+    font-weight: bold;
+    font-size: 5rem; /* Tamaño grande para escritorio */
+    text-align: center;
+    margin: 0;
+    word-wrap: break-word; /* Evita que el texto se desborde */
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem; /* Reduce el tamaño en móviles */
+    }
+}
+
