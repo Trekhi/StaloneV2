@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Personajes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="closeModal()">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="characterList.length > 0; else noData">
+    <ion-item *ngFor="let character of characterList">
+      <ion-avatar slot="start">
+        <img [src]="character.image" alt="Imagen del personaje" />
+      </ion-avatar>
+
+      <ion-label>
+        <h2>{{ character.name }}</h2>
+        <p>{{ character.species }} - {{ character.status }}</p>
+      </ion-label>
+
+      <ion-button size="small" slot="end" fill="outline" color="medium" (click)="openUser(character);">
+        Info
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noData>
+    <ion-text color="medium">
+      <p style="text-align:center; margin-top: 2rem;">No hay personajes disponibles</p>
+    </ion-text>
+  </ng-template>
+</ion-content>

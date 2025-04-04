@@ -1,0 +1,26 @@
+<ion-card class="character-card">
+  <img [src]="character.image" [alt]="character.name" class="character-image">
+
+  <ion-card-header>
+    <ion-card-title>{{ character.name }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p><strong>Especie: </strong> {{ character.species }}</p>
+    <p><strong>Género:</strong> {{ character.gender }}</p>
+    <p><strong>Estado:</strong> {{ character.status }}</p>
+    <p><strong>Origen:</strong> <span class="highlight">{{ character.origin.name }}</span></p>
+    <p><strong>Ubicación actual:</strong> <span class="highlight">{{ character.location.name }}</span></p>
+
+    <!-- Botón de favorito con diseño mejorado -->
+    <div class="favorite-container">
+      <ion-button (click)="toggleFavorito(character)" fill="clear" class="favorite-button">
+        <ion-icon 
+          [name]="esFavorito(character) ? 'heart' : 'heart-outline'" 
+          class="favorite-icon"
+        ></ion-icon>
+      </ion-button>
+    </div>
+    
+  </ion-card-content>
+</ion-card>

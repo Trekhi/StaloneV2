@@ -4,6 +4,7 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalo
 
 import { provideHttpClient } from '@angular/common/http'; //Solicitudes
 
+import { Storage } from '@ionic/storage-angular'; // Importa Storage
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 
@@ -13,5 +14,6 @@ bootstrapApplication(AppComponent, {
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideHttpClient(),
+    { provide: Storage, useFactory: () => new Storage() },
   ],
 });
