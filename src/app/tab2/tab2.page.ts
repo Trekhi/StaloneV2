@@ -1,15 +1,53 @@
-import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonList, IonItem, IonLabel, IonAvatar, IonContent, IonHeader, IonToolbar, IonFooter } from '@ionic/angular/standalone'; // Importar componentes de Ionic
+//import { ModalController } from '@ionic/angular'; // Importar ModalController
+import { RickMoryService } from '../services/rick-mory.service';
+import { HeaderComponent } from '../components/header/header.component';
+import { FooterComponent } from '../components/footer/footer.component';
+
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent]
+  standalone: true, // Asegúrate de que el componente sea standalone
+  imports: [IonFooter,  IonToolbar, IonHeader, CommonModule, FormsModule, IonList, IonItem, IonLabel, IonAvatar, IonContent, HeaderComponent, FooterComponent], // Importar componentes de Ionic
+  //providers: [ModalController] // Proveer ModalController
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit {
 
-  constructor() {}
+  titulo: string = 'Personajes';
+  subtitulo: string = 'Lista de personajes de Rick y Morty';
+  personajes: any[] = [];
 
+  constructor(
+    //private modalCtrl: ModalController, // Inyectar ModalController
+    private rickyMortyService: RickMoryService
+  ) { }
+
+  ngOnInit() {
+    this.cargarPersonajes();
+  }
+
+  cargarPersonajes() {
+    this.rickyMortyService.getPersonajes().subscribe(
+      (data: any) => {
+        this.personajes = data.results; // Asigna los resultados a la propiedad personajes
+        console.log('Personajes cargados:', this.personajes);
+      },
+    );
+  }
+
+  /*
+  async openModal(characterUrls: string[]) {
+    console.log('Opening modal with:', characterUrls);
+    const modal = await this.modalCtrl.create({
+      component: ModalComponent,
+      componentProps: { characters: characterUrls },
+    });
+    await modal.present();
+  }
+    */
 }

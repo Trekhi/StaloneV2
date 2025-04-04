@@ -1,17 +1,33 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <app-header></app-header>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <strong>{{ titulo }}</strong> - {{ subtitulo }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-list>
+    <ion-item *ngFor="let personaje of personajes">
+      <ion-avatar slot="start">
+        <img alt="Silhouette of a person's head" src="{{personaje.image}}" />
+      </ion-avatar>
+      <ion-label>
+        {{personaje.name}} - {{personaje.species}} - {{personaje.status}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <app-footer></app-footer>
+  </ion-toolbar>
+</ion-footer>
