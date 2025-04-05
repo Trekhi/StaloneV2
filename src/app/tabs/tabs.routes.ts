@@ -27,6 +27,11 @@ export const routes: Routes = [
         import('../components/code-qr/code-qr.component').then((m) => m.CodeQrComponent),
       },
       {
+        path: 'tab5',
+        loadComponent: () =>
+        import('../components/camara/camara.component').then((m) => m.CamaraComponent),
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full',

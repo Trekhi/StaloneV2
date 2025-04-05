@@ -1,19 +1,29 @@
 ion-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  
-    ion-list {
-      flex: 1; // hace que la lista ocupe todo el espacio disponible
-      overflow-y: auto;
-      padding: 16px;
-    }
-  
-    ion-fab {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      z-index: 10;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  ion-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+  }
+
+  ion-fab {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+
+    ion-fab-button {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease-in-out;
+      color: blue;
+      background: blue;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
-  
+}

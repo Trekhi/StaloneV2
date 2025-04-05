@@ -1,19 +1,35 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title> Barcode Scanner </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">📷 Escáner de Códigos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let barcode of barcodes">
-      <ion-label position="stacked">{{ barcode.format }}</ion-label>
-      <ion-input type="text" [value]="barcode.rawValue"></ion-input>
-    </ion-item>
-  </ion-list>
+<ion-content class="ion-padding">
+  <ion-card *ngIf="barcodes.length > 0">
+    <ion-card-header>
+      <ion-card-title>Resultados del Escaneo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let barcode of barcodes">
+          <ion-label>
+            <h2>{{ barcode.format }}</h2>
+            <p>{{ barcode.rawValue }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="barcodes.length === 0" class="ion-text-center">
+    <ion-text color="medium">
+      <p>Aún no has escaneado ningún código.</p>
+    </ion-text>
+  </div>
+
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button (click)="scan()" [disabled]="!isSupported">
-      <ion-icon name="scan"></ion-icon>
+    <ion-fab-button color="success" (click)="scan()" [disabled]="!isSupported">
+      <ion-icon name="scan-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>
