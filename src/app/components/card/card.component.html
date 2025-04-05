@@ -2,16 +2,16 @@
   <img [src]="image" alt="{{ title }}" />
   <ion-card-header>
     <ion-card-title>{{ title }}</ion-card-title>
-    <ion-card-subtitle>{{ subtitle }}</ion-card-subtitle>
+    <ion-card-subtitle class="episode-subtitle">{{ subtitle }}</ion-card-subtitle>
   </ion-card-header>
-  <ion-card-content>
+  <ion-card-content class="episode-description">
     {{ description }}
   </ion-card-content>
 
   <div class="boton">
-  <ion-button [color]="isBought ? 'success' : 'primary'" (click)="togglePurchase(); $event.stopPropagation()">
-    {{ isBought ? 'Back' : 'Information' }}
-  </ion-button>
+    <ion-button [color]="isBought ? 'success' : 'primary'" 
+                (click)="togglePurchase(); $event.stopPropagation()">
+      {{ isBought ? 'Back' : 'Information' }}
+    </ion-button>
   </div>
-
 </ion-card>

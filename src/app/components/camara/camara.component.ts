@@ -3,12 +3,13 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Capacitor } from '@capacitor/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-camara',
   templateUrl: './camara.component.html',
   styleUrls: ['./camara.component.scss'],
-  imports:[CommonModule, IonicModule ]
+  imports:[CommonModule, IonicModule, HeaderComponent ]
 })
 export class CamaraComponent implements OnInit {
   capturedImage: string | null = null;

@@ -3,13 +3,14 @@ import { Barcode, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
 import { AlertController } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-code-qr',
   standalone: true,
   templateUrl: './code-qr.component.html',
   styleUrls: ['./code-qr.component.scss'],
-  imports:[CommonModule,IonicModule]
+  imports:[CommonModule,IonicModule, HeaderComponent]
   
 })
 export class CodeQrComponent  implements OnInit {

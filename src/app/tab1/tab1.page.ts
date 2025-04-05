@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonContent, IonFooter } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonContent } from '@ionic/angular/standalone';
 //import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { HeaderComponent } from '../components/header/header.component';
-import { FooterComponent } from '../components/footer/footer.component';
+//import { FooterComponent } from '../components/footer/footer.component';
 import { RickMoryService } from '../services/rick-mory.service';
 import { SwiperSlidesComponent } from '../components/elements/swiper-slides/swiper-slides.component';
 
@@ -10,7 +10,7 @@ import { SwiperSlidesComponent } from '../components/elements/swiper-slides/swip
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
-  imports: [IonFooter, IonHeader, IonToolbar, IonContent, HeaderComponent, FooterComponent, SwiperSlidesComponent],
+  imports: [IonHeader, IonToolbar, IonContent, HeaderComponent, SwiperSlidesComponent],
 })
 export class Tab1Page {
 

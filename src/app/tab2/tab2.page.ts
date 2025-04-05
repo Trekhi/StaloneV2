@@ -5,7 +5,7 @@ import { IonList, IonItem, IonLabel, IonAvatar, IonContent, IonHeader, IonToolba
 import { ModalController } from '@ionic/angular/standalone'; //EL ERROR ERA QUE DEBIA SER A COMPONENTE STANDALOR
 import { RickMoryService } from '../services/rick-mory.service';
 import { HeaderComponent } from '../components/header/header.component';
-import { FooterComponent } from '../components/footer/footer.component';
+//import { FooterComponent } from '../components/footer/footer.component';
 import { ModalComponent } from '../components/modal/modal.component';
 
 
@@ -14,7 +14,7 @@ import { ModalComponent } from '../components/modal/modal.component';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
   standalone: true, // Asegúrate de que el componente sea standalone
-  imports: [ IonFooter,  IonToolbar, IonHeader, CommonModule, FormsModule, IonList, IonItem, IonLabel, IonAvatar, IonContent, HeaderComponent, FooterComponent], // Importar componentes de Ionic
+  imports: [ IonToolbar, IonHeader, CommonModule, FormsModule, IonList, IonItem, IonLabel, IonAvatar, IonContent, HeaderComponent], // Importar componentes de Ionic
   //providers: [ModalController] // Proveer ModalController
 })
 export class Tab2Page implements OnInit {
