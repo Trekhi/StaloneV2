@@ -1,0 +1,25 @@
+<!-- favorites.component.html -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Personajes Favoritos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Favoritos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngIf="favoriteCharacters.length === 0" class="empty-state">
+    <ion-icon name="heart-outline" size="large"></ion-icon>
+    <p>No tienes personajes favoritos aún</p>
+  </div>
+
+  <div *ngFor="let character of favoriteCharacters">
+    <app-user [character]="character"></app-user>
+  </div>
+</ion-content>

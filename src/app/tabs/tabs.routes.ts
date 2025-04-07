@@ -32,6 +32,18 @@ export const routes: Routes = [
         import('../components/camara/camara.component').then((m) => m.CamaraComponent),
       },
       {
+        path: 'tab6',
+        loadComponent: () =>
+          import('../components/favorites/favorites.component').then((m) => m.FavoritesComponent),
+
+      },
+      {
+        path: 'tab7',
+        loadComponent: () =>
+          import('../components/geo/geo.component').then((m) => m.GeoComponent),
+
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full',

@@ -4,6 +4,8 @@ import { ModalController, IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common'; 
 import { RickMoryService } from 'src/app/services/rick-mory.service';
 import { UserComponent } from '../user/user.component';
+import { close } from 'ionicons/icons';
+import { addIcons } from 'ionicons';
 
 @Component({
   selector: 'app-modal',
@@ -22,7 +24,11 @@ export class ModalComponent  implements OnInit {
     private http: HttpClient,
     private modalCtrl: ModalController,
     private rickMortyService: RickMoryService
-  ) { }
+  ) { 
+    {
+      addIcons({ close }); // Registra el icono
+    }
+  }
 
   ngOnInit() {
     this.rickMortyService.getCharacters(this.characters).subscribe((data) => { //El obtiene a partir de una lista las dirreciones de las Api y seguidamente realiza el consumo y se guarda en un ARRAY

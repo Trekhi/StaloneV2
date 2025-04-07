@@ -25,8 +25,15 @@
         <h3>{{ personaje.name }}</h3>
         <p>{{ personaje.species }} - {{ personaje.status }}</p>
       </ion-label>
-    </ion-item>
-  </ion-list>
+    <!-- Agrega este botón de favoritos -->
+    <ion-button slot="end" fill="clear" (click)="$event.stopPropagation(); toggleFavorito(personaje)">
+      <ion-icon 
+        [name]="esFavorito(personaje) ? 'heart' : 'heart-outline'" 
+        [color]="esFavorito(personaje) ? 'danger' : ''">
+      </ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-list>
 </ion-content>
 
 

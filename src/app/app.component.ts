@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import { Geolocation } from '@capacitor/geolocation';
+
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,15 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
   imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
-  constructor() {}
+  constructor() {
+    this.initPermissions();
+  }
+
+  async initPermissions() {
+    const permission = await Geolocation.requestPermissions();
+
+    if (permission.location !== 'granted') {
+      console.warn('Ubicación no permitida por el usuario');
+    }
+  }
 }
