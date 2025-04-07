@@ -1,10 +1,19 @@
-<ion-content class="ion-padding">
-  <ion-button expand="block" (click)="getCurrentLocation()">Obtener ubicación</ion-button>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ubicación actual</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+<ion-content>
 
-  <div *ngIf="lat && lon">
-    <p><strong>Latitud:</strong> {{ lat }}</p>
-    <p><strong>Longitud:</strong> {{ lon }}</p>
+  <div *ngIf="loading" class="loading">
+    Obteniendo ubicación...
   </div>
+
+  <div *ngIf="!loading && lat && lon" class="coordinates">
+    <p><strong>Geolocalización:</strong> Latitud: {{ lat }},  Longitud: {{ lon }} </p>
+  </div>
+
+  <div id="map" *ngIf="!loading"></div>
+
 </ion-content>

@@ -14,7 +14,11 @@
         <ion-item *ngFor="let barcode of barcodes">
           <ion-label>
             <h2>{{ barcode.format }}</h2>
-            <p>{{ barcode.rawValue }}</p>
+            <p>
+              <a [href]="barcode.rawValue" target="_blank" rel="noopener noreferrer">
+                {{ barcode.rawValue }}
+              </a>
+            </p>
           </ion-label>
         </ion-item>
       </ion-list>
