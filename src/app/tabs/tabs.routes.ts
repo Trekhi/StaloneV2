@@ -38,12 +38,6 @@ export const routes: Routes = [
 
       },
       {
-        path: 'tab7',
-        loadComponent: () =>
-          import('../components/geo/geo.component').then((m) => m.GeoComponent),
-
-      },
-      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full',

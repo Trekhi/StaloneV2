@@ -3,6 +3,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { CodeQrComponent } from './code-qr.component';
 
+
 describe('CodeQrComponent', () => {
   let component: CodeQrComponent;
   let fixture: ComponentFixture<CodeQrComponent>;

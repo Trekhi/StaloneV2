@@ -9,7 +9,7 @@ import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 
 bootstrapApplication(AppComponent, {
-  providers: [
+  providers: [[provideRouter(routes)],// routes para redirigir de qr a maps
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),

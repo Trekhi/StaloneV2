@@ -1,19 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Ubicación actual</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/qr"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ubicación del QR</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <div *ngIf="loading" class="loading">
-    Obteniendo ubicación...
+  <div *ngIf="lat && lon" class="coordinates">
+    <p><strong>Geolocalización:</strong> Latitud: {{ lat }}, Longitud: {{ lon }}</p>
   </div>
 
-  <div *ngIf="!loading && lat && lon" class="coordinates">
-    <p><strong>Geolocalización:</strong> Latitud: {{ lat }},  Longitud: {{ lon }} </p>
-  </div>
-
-  <div id="map" *ngIf="!loading"></div>
-
+  <div id="map"></div>
 </ion-content>

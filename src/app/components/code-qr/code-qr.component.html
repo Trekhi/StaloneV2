@@ -11,7 +11,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list>
-        <ion-item *ngFor="let barcode of barcodes">
+        <ion-item *ngFor="let barcode of barcodes" button (click)="openMap(barcode)">
           <ion-label>
             <h2>{{ barcode.format }}</h2>
             <p>
@@ -19,8 +19,18 @@
                 {{ barcode.rawValue }}
               </a>
             </p>
+            <p>
+              📍 Latitud: {{ barcode.latitude }}<br>
+              📍 Longitud: {{ barcode.longitude }}<br>
+              🕒 Escaneado en: {{ barcode.timestamp | date:'short' }}
+            </p>
+            <ion-button color="danger" fill="clear" (click)="removeQr(barcode)">
+              Eliminar
+            </ion-button>
           </ion-label>
         </ion-item>
+
+        
       </ion-list>
     </ion-card-content>
   </ion-card>
@@ -32,7 +42,7 @@
   </div>
 
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button color="success" (click)="scan()" [disabled]="!isSupported">
+    <ion-fab-button color="success" (click)="scan()" [disabled]="!isSupported || isScanning">
       <ion-icon name="scan-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
